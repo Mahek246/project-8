@@ -1,0 +1,926 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<body style="background-color:F0F0F0 ;">
+<div class="container">
+    <div class="row pt-5 pb-5">
+     
+        <div class="row pt-5 pb-5">
+            <div class="col-md-1">
+                <button onclick="viewAllRecord()" class="btn btn-dark">All</button>
+            </div>
+            <div class="col-md-1">
+                <button onclick="Indianwear()" class="btn btn-dark">indian wear</button>
+            </div>
+            <div class="col-md-1">
+                <button onclick="dresses()" class="btn btn-dark">westen dresses</button>
+            </div>
+            <div class="col-md-1">
+                <button onclick="jence()" class="btn btn-dark">denim jence</button>
+            </div>
+            <div class="col-md-1">
+                <button onclick="tops()" class="btn btn-dark">crop top</button>
+            </div>
+            <div class="col-md-1">
+                <button onclick="shorts()" class="btn btn-dark">mix & match</button>
+            </div>
+            <div class="col-md-1">
+                <button onclick="cusual()" class="btn btn-dark">cusual outfit</button>
+            </div>
+            <div class="col-md-1">
+                <button onclick="combo()" class="btn btn-dark">top & bottom</button>
+            </div>
+      
+
+    <div class="row" id="allrecord">
+        
+    </div>
+
+</div>
+
+<style>
+
+.card{
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+}
+
+.card:hover{
+    transform: translate(-10px);
+}
+
+</style>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    
+
+let data = [
+        {
+            name : "Dark Pink Resham Embroidered Organza set",
+            price : "2500",
+            image : "./images/img1.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "white dresse",
+            price : "2000",
+            image : "./images/aw.jpg",
+            category : "dresses"
+        },
+        {
+            name : "white full per",
+            price : "4000",
+            image : "./images/o.jpg",
+            category : "combo"
+        },
+        {
+            name : "off white saari with golden",
+            price : "4000",
+            image : "./images/img2.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "black denim jence",
+            price : "2500",
+            image : "./images/am.jpg",
+            category : "jence"
+        },
+       
+        {
+            name : "white dresse",
+            price : "1500",
+            image : "./images/ae.jpg",
+            category : "dresses"
+        },
+        {
+            name : "pink blouse with plan pink saari",
+            price : "1000",
+            image : "./images/img3.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "white crop top",
+            price : "1000",
+            image : "./images/bz.jpg",
+            category : "tops"
+        },
+        {
+            name : "white plan blouse with cream desing sari",
+            price : "1000",
+            image : "./images/img4.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "party wear sarri",
+            price : "3000",
+            image : "./images/img5.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "simple plan pink saari",
+            price : "800",
+            image : "./images/img6.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "black denim jence",
+            price : "2000",
+            image : "./images/af.jpg",
+            category : "jence"
+        },
+        {
+            name : "glass green plan saari with long sleeves bloues",
+            price : "900",
+            image : "./images/img7.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "plan saari with desiner bloues",
+            price : "1000",
+            image : "./images/img8.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "formal set",
+            price : "3000",
+            image : "./images/y.jpg",
+            category : "combo"
+        },
+        {
+            name : "blakc bloues with party wear saari",
+            price : "700",
+            image : "./images/img9.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "pink crop top",
+            price : "1000",
+            image : "./images/u.jpg",
+            category : "tops"
+        },
+        {
+            name : "chikan buta kurti in white color with dupta set",
+            price : "2000",
+            image : "./images/img10.jpg",
+            category : "Indianwear"
+        },
+
+        {
+            name : "white blouse n lengha with yellow hevavy dupta",
+            price : "4000",
+            image : "./images/img11.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "white cute dresse",
+            price : "2000",
+            image : "./images/z.png",
+            category : "dresses"
+        },
+        {
+            name : "blue denim jence",
+            price : "2500",
+            image : "./images/q.jpg",
+            category : "jence"
+        },
+
+        {
+            name : "3 piecs westen wear",
+            price : "3500",
+            image : "./images/img12.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "2 set simple t-shirt n denim shorts",
+            price : "2000",
+            image : "./images/n.jpg",
+            category : "combo"
+        },
+    
+        {
+            name : "black shirt",
+            price : "2000",
+            image : "./images/p.png",
+            category : "shorts"
+        },
+
+        {
+            name : "dark red coloer lenght n bloues set",
+            price : "5500",
+            image : "./images/img13.png",
+            category : "Indianwear"
+        },
+        {
+            name : "black jeket with crop top",
+            price : "2500",
+            image : "./images/an.jpg",
+            category : "tops"
+        },
+        {
+            name : "white up sholuder dress",
+            price : "3000",
+            image : "./images/ao.jpg",
+            category : "dresses"
+        },
+
+        {
+            name : "white bloues with pink fency lengha",
+            price : "6000",
+            image : "./images/img14.jpg",
+            category : "Indianwear"
+        },
+
+        {
+            name : "recaption choli set",
+            price : "7500",
+            image : "./images/img15.jpg",
+            category : "Indianwear"
+        },
+
+        {
+            name : "yellow choli with desiner bloues",
+            price : "3500",
+            image : "./images/img16.jpg",
+            category : "Indianwear"
+        },
+
+        {
+            name : "fency glass green clouer lengha and bloues",
+            price : "8000",
+            image : "./images/img17.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "2 piece cusual outfit",
+            price : "1500",
+            image : "./images/ak.jpg",
+            category : "shorts"
+        },
+        {
+            name : "cute sky blue dress",
+            price : "3500",
+            image : "./images/al.jpg",
+            category : "dresses"
+        },
+
+
+        {
+            name : "desiner choli wearing on function",
+            price : "4000",
+            image : "./images/img18.jpg",
+            category : "Indianwear"
+        },
+
+        {
+            name : "desiner bloues with simple plaza n dupta set",
+            price : "3500",
+            image : "./images/img19.jpg",
+            category : "Indianwear"
+        },
+
+        {
+            name : "westen function outfit",
+            price : "4000",
+            image : "./images/img20.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "cusual t-shirt",
+            price : "700",
+            image : "./images/aq.jpg",
+            category : "tops"
+        },
+        {
+            name : "black blezer",
+            price : "3000",
+            image : "./images/as.jpg",
+            category : "combo"
+        },
+
+        {
+            name : "white bloues with dhoti and strag set",
+            price : "5500",
+            image : "./images/img21.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "crop top",
+            price : "1000",
+            image : "./images/aa.jpg",
+            category : "tops"
+        },
+      
+        {
+            name : "fancy bloues with plaza per",
+            price : "5000",
+            image : "./images/img22.jpg",
+            category : "Indianwear"
+        },
+
+        {
+            name : "wedding lengha",
+            price : "10,000",
+            image : "./images/img23.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "white t-shirt with brown formal pent",
+            price : "2000",
+            image : "./images/v.jpg",
+            category : "3000"
+        },
+
+        {
+            name : "desinger puprple saari",
+            price : "5000",
+            image : "./images/img24.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "white crop top",
+            price : "1200",
+            image : "./images/ag.jpg",
+            category : "tops"
+        },
+        {
+            name : "black shirt",
+            price : "2000",
+            image : "./images/ah.jpg",
+            category : "cusual"
+        },
+
+        {
+            name : "simple white set for function",
+            price : "2000",
+            image : "./images/img25.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "pink shirt",
+            price : "700",
+            image : "./images/au.jpg",
+            category : "cusual"
+        },
+        {
+            name : "white formal shirt ",
+            price : "1000",
+            image : "./images/av.jpg",
+            category : "cusual"
+        },
+       
+
+        {
+            name : "westen fancy set for wedding",
+            price : "4000",
+            image : "./images/img26.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "jence denim",
+            price : "2500",
+            image : "./images/ab.jpg",
+            category : "jence"
+        },
+        {
+            name : "crop top",
+            price : "1000",
+            image : "./images/ac.jpg",
+            category : "tops"
+        },
+
+        {
+            name : "desiner set for function",
+            price : "4500",
+            image : "./images/img27.jpg",
+            category : "Indianwear"
+        },
+
+        {
+            name : "wedding outfit",
+            price : "3500",
+            image : "./images/img28.jpg",
+            category : "Indianwear"
+        },
+
+        {
+            name : "baby pink plaza with desiner bloues",
+            price : "3000",
+            image : "./images/img29.jpg",
+            category : "Indianwear"
+        },
+
+        {
+            name : "baby pink saari",
+            price : "1500",
+            image : "./images/img30.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "yeelow outfit wearing in wedding function",  
+            price : "3000",
+            image : "./images/img31.png",
+            category : "Indianwear"
+        },
+        {
+            name : "westen wear ", 
+            price : "4000",
+            image : "./images/img32.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "light green shirt",
+            price : "700",
+            image : "./images/be.jpg",
+            category : "cusual"
+        },
+        {
+            name : "backless white dress",
+            price : "2000",
+            image : "./images/bf.jpg",
+            category : "dresses"
+        },
+        {
+            name : "white simple lengha",
+            price : "2000",
+            image : "./images/img33.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "red reshmi saari",
+            price : "6000",
+            image : "./images/img34.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "black n white westen wear ",
+            price : "5000",
+            image : "./images/img35.jpg",
+            category : "Indianwear"
+        },
+        {
+            name : "black simple dresses",
+            price : "1500",
+            image : "./images/a.jpg",
+            category : "dresses"
+        },
+        {
+            name : "black dresses",
+            price : "2000",
+            image : "./images/c.jpg",
+            category : "dresses"
+        },
+        {
+            name : "wide lengh",
+            price : "2000",
+            image : "./images/d.jpg",
+            category : "jence"
+        },
+        {
+            name : "white shirt ",
+            price : "800",
+            image : "./images/e.jpg",
+            category : "cusual"
+        },
+        {
+            name : "white winter t-shirt",
+            price : "1000",
+            image : "./images/f.jpg",
+            category : "tops"
+        },
+        {
+            name : "black formal pant",
+            price : "1500",
+            image : "./images/g.jpg",
+            category : "jence"
+        },
+        {
+            name : "pink and white flower dresses",
+            price : "2000",
+            image : "./images/h.jpg",
+            category : "dresses"
+        },
+        {
+            name : "white shirt",
+            price : "900",
+            image : "./images/i.jpg",
+            category : "cusual"
+        },
+        {
+            name : "combo set",
+            price : "4000",
+            image : "./images/j.jpg",
+            category : "combo"
+        },
+        {
+            name : "white shorts",
+            price : "1000",
+            image : "./images/l.jpg",
+            category : "shorts"
+        },
+
+        {
+            name : "black backless dresse",
+            price : "2000",
+            image : "./images/m.png",
+            category : "dresses"
+        },
+
+      
+       
+      
+
+        {
+            name : "denim jence ",
+            price : "2000",
+            image : "./images/w.webp",
+            category : "jence"
+        },
+     
+        {
+            name : "2 piece set",
+            price : "2500",
+            image : "./images/x.jpg",
+            category : "shorts"
+        },
+
+
+        {
+            name : "3 combo set",
+            price : "5000",
+            image : "./images/ad.jpg",
+            category : "combo"
+        },
+        
+      
+      
+        {
+            name : "fancy black t-shirt",
+            price : "4000",
+            image : "./images/ai.jpg",
+            category : "combo"
+        },
+        {
+            name : "full black 2 piece",
+            price : "3000",
+            image : "./images/aj.jpg",
+            category : "dresses"
+        },   
+      
+        {
+            name : "off white shirt",
+            price : "1300",
+            image : "./images/ap.jpg",
+            category : "cusual"
+        },
+       
+        {
+            name : "mehndi shirt",
+            price : "700",
+            image : "./images/at.jpg",
+            category : "cusual"
+        },
+      
+        {
+            name : "white dress",
+            price : "2500",
+            image : "./images/ay.jpg",
+            category : "dresses"
+        },
+        {
+            name : "pink full lengh dress",
+            price : "2500",
+            image : "./images/az.jpg",
+            category : "dresses"
+        },
+        {
+            name : "black party wear dress",
+            price : "3500",
+            image : "./images/ba.jpg",
+            category : "shorts"
+        },
+        {
+            name : "black shirts",
+            price : "2500",
+            image : "./images/bb.jpg",
+            category : "jence"
+        },
+        {
+            name : "denim  jence",
+            price : "1000",
+            image : "./images/bc.jpg",
+            category : "jence"
+        },
+        
+       
+        {
+            name : "white long blezer",
+            price : "3000",
+            image : "./images/bg.jpg",
+            category : "combo"
+        },
+        {
+            name : "black full lengh dress",
+            price : "2000",
+            image : "./images/bh.jpg",
+            category : "dresses"
+        },
+        {
+            name : "denim shorts",
+            price : "2000",
+            image : "./images/bi.jpg",
+            category : "shorts"
+        },
+        {
+            name : "white blezer",
+            price : "4000",
+            image : "./images/bk.jpg",
+            category : "combo"
+        },
+        {
+            name : "full gray 2 piece",
+            price : "3000",
+            image : "./images/bl.jpg",
+            category : "combo"
+        },
+        {
+            name : "3 piece set in black",
+            price : "4000",
+            image : "./images/bp.jpg",
+            category : "combo"
+        },
+        {
+            name : "white wid lengh",
+            price : "2000",
+            image : "./images/bm.jpg",
+            category : "jence"
+        },
+        {
+            name : "jam shut in black",
+            price : "3000",
+            image : "./images/bn.jpg",
+            category : "dresses"
+        },
+        {
+            name : "white dress",
+            price : "2000",
+            image : "./images/bo.jpg",
+            category : "dresses"
+        },
+        {
+            name : "black long shirt",
+            price : "1500",
+            image : "./images/bs.jpg",
+            category : "tops"
+        },
+        {
+            name : "white 2 piece",
+            price : "3000",
+            image : "./images/bu.jpg",
+            category : "combo"
+        },
+        {
+            name : "cusual outfit",
+            price : "2000",
+            image : "./images/bw.jpg",
+            category : "cusual"
+        },
+        {
+            name : "white t-shirt",
+            price : "700",
+            image : "./images/bv.png",
+            category : "cusual"
+        },
+        {
+            name : "black formal ",
+            price : "1000",
+            image : "./images/bj.jpg",
+            category : "jence"
+        },
+        {
+            name : "shorts",
+            price : "1500",
+            image : "./images/by.jpg",
+            category : "shorts"
+        },
+        {
+            name : "oversize",
+            price : "1000",
+            image : "./images/bx.jpg",
+            category : "tops"
+        },
+    ];
+
+
+    viewAllRecord();
+    function viewAllRecord()
+    {
+        let tbl = "";
+        data.map((val)=>{
+            tbl += `
+                <div class="col-md-4 pb-4">
+                    <div class="card">
+                        <img src="${val.image}" style="height:300px;object-fit:cover" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title">${val.name}</h5>
+                        <p class="card-text">${val.category}</p>
+                        <p class="card-text">${val.price}</p>
+                        <a href="#" class="btn btn-primary">Order</a>
+                        </div>
+                    </div>
+                </div>
+            `
+        })
+
+        document.getElementById('allrecord').innerHTML = tbl;
+    }
+
+    function Indianwear(){
+        let category = "Indianwear";
+        let tbl = "";
+        data.map((val)=>{
+
+            if(val.category == category)
+            {
+                tbl += `
+                    <div class="col-md-4 pb-4" , >
+                        <div class="card">
+                            <img src="${val.image} " style="height:300px;object-fit:cover" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title" onmouseout="hovers()">${val.name}</h5>
+                            <p class="card-text">${val.category}</p>
+                            <p class="card-text">${val.price}</p>
+                            <a href="#" class="btn btn-primary" >Order</a>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+            
+        })
+        document.getElementById('allrecord').innerHTML = tbl;
+    }
+
+    function dresses(){
+        let category = "dresses";
+        let tbl = "";
+        data.map((val)=>{
+
+            if(val.category == category)
+            {
+                tbl += `
+                    <div class="col-md-4 pb-4">
+                        <div class="card">
+                            <img src="${val.image}" style="height:300px;object-fit:cover" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">${val.name}</h5>
+                            <p class="card-text">${val.category}</p>
+                            <p class="card-text">${val.price}</p>
+                            <a href="#" class="btn btn-primary">Order</a>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+            
+        })
+        document.getElementById('allrecord').innerHTML = tbl;
+    }
+
+    function jence(){
+        let category = "jence";
+        let tbl = "";
+        data.map((val)=>{
+
+            if(val.category == category)
+            {
+                tbl += `
+                    <div class="col-md-4 pb-4">
+                        <div class="card">
+                            <img src="${val.image}" style="height:300px;object-fit:cover" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">${val.name}</h5>
+                            <p class="card-text">${val.category}</p>
+                            <p class="card-text">${val.price}</p>
+                            <a href="#" class="btn btn-primary">Order</a>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+            
+        })
+        document.getElementById('allrecord').innerHTML = tbl;
+    }
+
+    function tops(){
+        let category = "tops";
+        let tbl = "";
+        data.map((val)=>{
+
+            if(val.category == category)
+            {
+                tbl += `
+                    <div class="col-md-4 pb-4">
+                        <div class="card">
+                            <img src="${val.image}" style="height:300px;object-fit:cover" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">${val.name}</h5>
+                            <p class="card-text">${val.category}</p>
+                            <p class="card-text">${val.price}</p>
+                            <a href="#" class="btn btn-primary">Order</a>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+            
+        })
+        document.getElementById('allrecord').innerHTML = tbl;
+    }
+
+    function shorts(){
+        let category = "shorts";
+        let tbl = "";
+        data.map((val)=>{
+
+            if(val.category == category)
+            {
+                tbl += `
+                    <div class="col-md-4 pb-4">
+                        <div class="card">
+                            <img src="${val.image}" style="height:300px;object-fit:cover" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">${val.name}</h5>
+                            <p class="card-text">${val.category}</p>
+                            <p class="card-text">${val.price}</p>
+                            <a href="#" class="btn btn-primary">Order</a>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+            
+        })
+        document.getElementById('allrecord').innerHTML = tbl;
+    }
+
+    function cusual(){
+        let category = "cusual";
+        let tbl = "";
+        data.map((val)=>{
+
+            if(val.category == category)
+            {
+                tbl += `
+                    <div class="col-md-4 pb-4">
+                        <div class="card">
+                            <img src="${val.image}" style="height:300px;object-fit:cover" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">${val.name}</h5>
+                            <p class="card-text">${val.category}</p>
+                            <p class="card-text">${val.price}</p>
+                            <a href="#" class="btn btn-primary">Order</a>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+            
+        })
+        document.getElementById('allrecord').innerHTML = tbl;
+    }
+
+    function combo(){
+        let category = "combo";
+        let tbl = "";
+        data.map((val)=>{
+
+            if(val.category == category)
+            {
+                tbl += `
+                    <div class="col-md-4 pb-4">
+                        <div class="card">
+                            <img src="${val.image}" style="height:300px;object-fit:cover" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">${val.name}</h5>
+                            <p class="card-text">${val.category}</p>
+                            <p class="card-text">${val.price}</p>
+                            <a href="#" class="btn btn-primary">Order</a>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+            
+        })
+        document.getElementById('allrecord').innerHTML = tbl;
+    }
+
+
+    
+
+
+</script>
